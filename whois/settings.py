@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_+ld(62ln*sz_do-#s$zm%4s5w06+901pke#%c$e%ow1&7@(hb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["mangofever.herokuapp.com","127.0.0.1:8000"]
+ALLOWED_HOSTS = ["mangofever.herokuapp.com","127.0.0.1"]
 
 
 # Application definition
@@ -123,7 +123,7 @@ STATICFILES_DIRS = [
      
 ]
 
-STATIC_ROOT = BASE_DIR / "static-root"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = '/media/'
 
