@@ -123,7 +123,7 @@ STATICFILES_DIRS = [
      
 ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "static-root"
 
 MEDIA_URL = '/media/'
 
