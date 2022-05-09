@@ -1,0 +1,49 @@
+body{
+    padding:0;
+    margin: 0;
+}
+nav{
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:rgb(249, 236, 236)
+}
+.container{
+    height:60px;
+    
+    line-height:50px;
+   
+}
+
+
+.title-header{
+    font-size:20px;
+}
+
+.btn-primary{
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:rgb(249, 236, 236);
+    
+}
+
+.btn-primary:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+ 
+
+.not-visible{
+    display: none;
+}
+
+a{
+text-decoration: none;
+color:rgb(249, 236, 236)
+}
+
+a:hover{
+    
+    color:white
+    }
