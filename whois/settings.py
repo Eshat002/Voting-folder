@@ -138,7 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
  
-AWS_DEFAULT_ACL=None
+AWS_DEFAULT_ACL = 'public-read'
 AWS_ACCESS_KEY_ID="AKIA2QMJG7PB53CMIS6D"
 AWS_SECRET_ACCESS_KEY="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"
 AWS_STORAGE_BUCKET_NAME="mangofever"
