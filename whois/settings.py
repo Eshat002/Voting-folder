@@ -58,12 +58,12 @@ ACCOUNT_EMAIL_VERIFICATION ='mandatory'
 # ACCOUNT_USERNAME_REQUIRED=False
 
 #sending email
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'nolanvenus33@gmail.com'
-EMAIL_HOST_PASSWORD = 'goodboy33'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'nolanvenus33@gmail.com'
+# EMAIL_HOST_PASSWORD = 'thegreatboy3@3'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
