@@ -45,6 +45,6 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <b>or login with</b>
  <h5><a class="social-login" href="{% provider_login_url 'facebook' method='oauth2'%}">facebook</a></h5>
  
- <h5><a class="social-login" href="">google</a></h5>
+ <h5><a class="social-login" href="{% provider_login_url 'google'%}">google</a></h5>
 
 {% endblock %}
