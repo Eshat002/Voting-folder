@@ -26,9 +26,13 @@
                 <div class="col-6"><b id="main-title">Compare Stupids</b>
                 </div>
                 <div class="col-6 text-end">
-                    <a href="#">Register</a>&nbsp;
-                    <a href="#">login</a>&nbsp;&nbsp;
-
+                    {% if request.user.is_authenticated %}
+                    <a href="/accounts/logout/">logout</a>&nbsp;
+                     {% else %}
+                    
+                    <a href="/accounts/signup/">sign up</a>&nbsp;
+                    <a href="/accounts/login/">login</a>&nbsp;&nbsp;
+                    {% endif %}
                 </div>
             </div>
         </div>
