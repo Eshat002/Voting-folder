@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_+ld(62ln*sz_do-#s$zm%4s5w06+901pke#%c$e%ow1&7@(hb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["mangofever.herokuapp.com","127.0.0.1"]
 
@@ -169,12 +169,12 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
  
-# AWS_DEFAULT_ACL = None
-# AWS_ACCESS_KEY_ID="AKIA2QMJG7PB53CMIS6D"
-# AWS_SECRET_ACCESS_KEY="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"
-# AWS_STORAGE_BUCKET_NAME="mangofever"
-# AWS_QUERYSTRING_AUTH=False
+AWS_DEFAULT_ACL = None
+AWS_ACCESS_KEY_ID="AKIA2QMJG7PB53CMIS6D"
+AWS_SECRET_ACCESS_KEY="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"
+AWS_STORAGE_BUCKET_NAME="mangofever"
+AWS_QUERYSTRING_AUTH=False
 
