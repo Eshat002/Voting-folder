@@ -7,14 +7,12 @@
 
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<h1>{% trans "Login to mangofever" %}</h1>
 
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+<!-- <p>{% blocktrans with site.name as site_name %}  {% endblocktrans %}</p> -->
 
 <div class="socialaccount_ballot">
 
@@ -42,9 +40,9 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
 </form>
-<b>or login with</b>
+<!-- <b>or login with</b>
  <h5><a class="social-login" href="{% provider_login_url 'facebook' method='oauth2'%}">facebook</a></h5>
  
- <h5><a class="social-login" href="{% provider_login_url 'google'%}">google</a></h5>
+ <h5><a class="social-login" href="{% provider_login_url 'google'%}">google</a></h5> -->
 
 {% endblock %}
