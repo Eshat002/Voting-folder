@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    'crispy_forms',
+
 ]
 
 # ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
@@ -66,7 +68,7 @@ ACCOUNT_LOGOUT_REDIRECT_URL="/accounts/login/"
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 
-
+# CRISPY_TEMPLATE_PACK = 'boostrap5'
 
 
 #sending email

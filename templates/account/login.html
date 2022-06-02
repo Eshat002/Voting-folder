@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+ {% load crispy_forms_tags %}
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -7,7 +7,17 @@
 
 {% block content %}
 
-<h1>{% trans "Login to mangofever" %}</h1>
+<div class='container'>
+ 
+  <div class='row'>
+  <div class='col d-none d-md-block'> 
+     hi
+   </div>
+
+   <div id="login-box"class='col-md-5 mt-5 mb-1 text-center'>
+    <div class="card" style="background-color:rgb(237, 253, 253)"> 
+  <div class='card-body  p-5'>
+    <h2 class="mb-3">{% trans "Login to mangofever" %}</h2>
 
 {% get_providers as socialaccount_providers %}
 
@@ -16,12 +26,17 @@
 
 <div class="socialaccount_ballot">
 
-  <ul class="socialaccount_providers">
+  <!-- <ul class="socialaccount_providers">
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+  </ul> -->
 
-  <div class="login-or">{% trans 'or' %}</div>
+  <!-- <div class="login-or">{% trans 'or' %}</div> -->
+   
+  <h5><a class="social-login btn btn-primary rounded-pill border none pb-2  px-4" href="{% provider_login_url 'facebook' method='oauth2'%}">Log in with Facebook</a></h5>
+  
+  <h5><a class="social-login btn btn-primary rounded-pill border none pb-2 px-4" href="{% provider_login_url 'google'%}">Login in with Google</a></h5>
 
+ <h4>OR</h4>
 </div>
 
 {% include "socialaccount/snippets/login_extra.html" %}
@@ -31,18 +46,37 @@
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
+<form class="login me-again" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form|crispy }}
+ 
+
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+   
+  <button class="primaryAction btn btn-primary border none rounded-pill px-3 pb-2" type="submit">{% trans "Login" %}</button>&#160;
+  <a id="forgot-pass" class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+
 </form>
-<!-- <b>or login with</b>
- <h5><a class="social-login" href="{% provider_login_url 'facebook' method='oauth2'%}">facebook</a></h5>
+
+        
+  </div>
+</div>
+       </div>
+       <div class='col d-none d-md-block '>there</div>
+  </div>
+  
+   
+</div>
  
- <h5><a class="social-login" href="{% provider_login_url 'google'%}">google</a></h5> -->
+
+
+ 
+ 
 
 {% endblock %}
+
+
+
+ 

@@ -13,7 +13,7 @@ nav{
 .container{
     height:60px;
     
-    line-height:50px;
+    line-height:58px;
    
 }
 
@@ -49,7 +49,7 @@ a:hover{
     }
  
 .social-login{
-    color:green !important
+    /* color:purple !important */
 }
 
 .man-with-word a {
@@ -60,4 +60,33 @@ a:hover{
 .man-with-word {
     list-style-type:none;
    
+}
+
+#forgot-pass{
+    color:#67B26F;
+    font-weight: bold;
+}
+
+
+.me-again label,.password_reset label {
+    display:none !important;
+}
+
+#id_login,#id_password,#id_email{
+    margin-bottom:5px !important;
+    height:40px ;
+    border-radius:10px;
+    border:2px solid #67B26F;
+    padding:7px !important;
+   
+}
+
+
+#id_email,#id_login,#id_password:focus{
+    outline:none ;
+}
+
+.dhat{
+    padding-bottom:0 !important;
+    margin-bottom: 0 !important;
 }
