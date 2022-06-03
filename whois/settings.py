@@ -80,7 +80,7 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #sending SES email
-EMAIL_BACKEND = 'backends.smtp.SSLEmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'AKIA2QMJG7PBSVA3LJOQ'
