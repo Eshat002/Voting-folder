@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_+ld(62ln*sz_do-#s$zm%4s5w06+901pke#%c$e%ow1&7@(hb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["mangofever.herokuapp.com","127.0.0.1"]
 
@@ -80,14 +80,14 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #sending SES email
-EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
-# AWS_SES_REGION_ENDPOINT = 'email-smtp.us-east-1.amazonaws.com'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND  = 'django_ses.SESBackend'
 EMAIL_HOST  = 'email-smtp.us-east-1.amazonaws.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'AKIA2QMJG7PBSVA3LJOQ'
 EMAIL_HOST_PASSWORD = 'BBd7UMzSUpTCVu7DceLJQ/+RN2OigdxgBCmpZm2xPOEZ'
 EMAIL_USE_TLS = True
-
+DEFAULT_FROM_EMAIL="nolanvenus33@gmail.com"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
