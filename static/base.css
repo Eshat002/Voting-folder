@@ -28,11 +28,11 @@ nav{
     
 }
 
-.btn-primary:focus {
+/* .btn-primary:focus {
     outline: none !important;
     box-shadow: none !important;
 }
- 
+  */
 
 .not-visible{
     display: none;
