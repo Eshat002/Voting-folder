@@ -28,11 +28,11 @@ nav{
     
 }
 
-/* .btn-primary:focus {
+.btn-primary:focus {
     outline: none !important;
     box-shadow: none !important;
 }
-  */
+ 
 
 .not-visible{
     display: none;
@@ -68,7 +68,7 @@ a:hover{
 }
 
 
-.me-again label,.password_reset label,#div_id_password1 label{
+.me-again label,.password_reset label,#div_id_password1 label,.signup-form label{
     display:none !important;
 }
 
