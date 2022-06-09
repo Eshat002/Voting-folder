@@ -46,7 +46,7 @@
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<form class="login me-again" method="POST" action="{% url 'account_login' %}">
+<form style="line-height:2;"class="login me-again" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}
  
@@ -79,29 +79,24 @@
 
 {% block scripts %}
  <script> 
- $(document).ready(function(){
-  
-
-
-const mot= document.getElementById("id_login")
-const mot2= document.getElementById("id_password")
-  
-
-
-mot.onclick= function myFunction() {
-  var element = document.getElementById("id_login");
-  element.classList.add("border","none");
-  console.log("did")
-}
-
-mot2.onclick= function myFunction2() {
-  var element2 = document.getElementById("id_password");
-  element2.classList.add("border","none");
-}
-
-
- });
-</script>
+var baseElement = document.querySelector(".me-again");
+ 
+  var nice =baseElement.querySelector("li")
+  console.log("nice",nice)
+  if(nice != null){
+   nice.setAttribute("style","list-style-type:none")
+   nice.setAttribute("display","inline-block")
+   
+  }
+  var fine =baseElement.querySelector(".alert-error")
+  console.log("fine",fine)
+  if(fine != null){
+    console.log("fine",fine)
+   fine.setAttribute("class","p-0")
+   
+  }
+ 
+ </script>
      
      
     {% endblock scripts %}

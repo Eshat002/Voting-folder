@@ -72,12 +72,14 @@ a:hover{
     display:none !important;
 }
 
-
+ .hot {
+    list-style-type: none !important;
+}
  
 
 
 #id_login,#id_password,#id_email{
-    margin-bottom:5px !important;
+    margin-bottom:10px !important;
     height:40px ;
     border-radius:10px;
     border:2px solid #67B26F;

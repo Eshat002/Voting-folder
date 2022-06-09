@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load account %}
@@ -7,17 +7,27 @@
 
 
 {% block content %}
-<h1>{% trans "Confirm E-mail Address" %}</h1>
+<div class='container mt-2'>
+ 
+    <div class='row'>
+    <div class='col d-none d-md-block'> 
+       hi
+     </div>
+  
+     <div id="confirm-email"class='col-md-5 mt-5 mb-1'>
+      <div class="card" style="background-color:rgb(237, 253, 253)"> 
+    <div class='card-body  p-5'>
+<h3>{% trans "Confirm E-mail Address" %}</h3>
 
 {% if confirmation %}
 
 {% user_display confirmation.email_address.user as user_display %}
 
-<p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
+<!-- <p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p> -->
 
 <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button type="submit">{% trans 'Confirm' %}</button>
+    <button class="btn btn-primary px-3 pb-2 mt-2" type="submit">{% trans 'Confirm' %}</button>
 </form>
 
 {% else %}
@@ -28,4 +38,12 @@
 
 {% endif %}
 
+</div>
+</div>
+       </div>
+       <div class='col d-none d-md-block '>there</div>
+  </div>
+  
+   
+</div>
 {% endblock %}
