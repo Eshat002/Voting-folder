@@ -79,7 +79,7 @@ a:hover{
 
 
 #id_login,#id_password,#id_email{
-    margin-bottom:10px !important;
+    margin-bottom:5px !important;
     height:40px ;
     border-radius:10px;
     border:2px solid #67B26F;
@@ -98,5 +98,4 @@ a:hover{
     margin-bottom: 0 !important;
 }
 
- 
  
