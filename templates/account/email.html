@@ -17,7 +17,7 @@
   <div class='card-body  p-5'>
     <h3>{% trans "E-mail Addresses" %}</h3>
 {% if user.emailaddress_set.all %}
-<p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
+<p><b>{% trans 'The following e-mail addresses are associated with your account:' %}</b></p>
 
 <form   action="{% url 'account_email' %}" class="email_list" method="post">
 {% csrf_token %}
@@ -41,9 +41,9 @@
   {% endfor %}
 
 <div class="buttonHolder mb-3 ">
-   <div class="mb-2">  <button class="secondaryAction mt-2" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button></div>
-   <div class="mb-2">  <button class="secondaryAction" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button></div>
-   <div class="mb-2">   <button class="primaryAction" type="submit" name="action_remove" >{% trans 'Remove' %}</button></div>
+   <div class="mb-2">  <button class="secondaryAction mt-2 btn btn-primary px-3 pb-2 rounded-pill border none" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button></div>
+   <div class="mb-2">  <button class="secondaryAction btn btn-primary px-3 pb-2 rounded-pill border none" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button></div>
+   <div class="mb-2">   <button class="primaryAction btn btn-primary px-3 pb-2 rounded-pill border none" type="submit" name="action_remove" >{% trans 'Remove' %}</button></div>
 </div>
 
 </fieldset>
@@ -57,10 +57,10 @@
   {% if can_add_email %}
     <h4 class="mb-3">{% trans "Add E-mail Address" %}</h4>
 
-    <form method="post" action="{% url 'account_email' %}" class="add_email">
+    <form style="line-height:1" method="post" action="{% url 'account_email' %}" class="add_email neptune">
         {% csrf_token %}
         {{ form.as_p }}
-        <button clas="mt-0" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+        <button id="add-email-btn" class="mt-0 btn btn-primary px-3 pb-2 rounded-pill border none" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
 
@@ -102,7 +102,28 @@
 {% block scripts %} 
 <script>
 $('label[for="id_email"]').hide();
+var addEmailBtn= document.getElementById("add-email-btn")
+ addEmailBtn.classList.add("nai")
+
+
+var baseElement = document.querySelector(".neptune");
+var wellUL =baseElement.querySelector("ul")
+
+if(wellUL != null){
+   wellUL.setAttribute("class","px-0")
  
+   
+  }
+
+  var well =baseElement.querySelector("li")
+  
+  if(well != null){
+   
+    
+   well.setAttribute("style","list-style-type:none")
+   well.classList.add("okay")
+   
+  }
  
 </script>
 

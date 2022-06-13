@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import dj_database_url
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_+ld(62ln*sz_do-#s$zm%4s5w06+901pke#%c$e%ow1&7@(hb'
+SECRET_KEY = config('SECRET_KEY')
 
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG',cast=bool)
 
 ALLOWED_HOSTS = ["mangofever.herokuapp.com","127.0.0.1"]
 
@@ -83,11 +85,11 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_BACKEND  = 'django_ses.SESBackend'
 EMAIL_HOST  = 'email-smtp.us-east-1.amazonaws.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'AKIA2QMJG7PBSVA3LJOQ'
-EMAIL_HOST_PASSWORD = 'BBd7UMzSUpTCVu7DceLJQ/+RN2OigdxgBCmpZm2xPOEZ'
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL="nolanvenus33@gmail.com"
+EMAIL_PORT = config('EMAIL_PORT',cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS',cast=bool)
+DEFAULT_FROM_EMAIL=config('DEFAULT_FROM_EMAIL')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -194,12 +196,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
  
-# AWS_DEFAULT_ACL = None
-# AWS_ACCESS_KEY_ID="AKIA2QMJG7PB53CMIS6D"
-# AWS_SECRET_ACCESS_KEY="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"
-# AWS_STORAGE_BUCKET_NAME="mangofever"
-# AWS_QUERYSTRING_AUTH=False
+AWS_DEFAULT_ACL = None
+AWS_ACCESS_KEY_ID=config("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY=config("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME=config("AWS_STORAGE_BUCKET_NAME")
+AWS_QUERYSTRING_AUTH=config("AWS_QUERYSTRING_AUTH",cast=bool)
 
 
