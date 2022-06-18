@@ -136,12 +136,12 @@ const getQuestions=()=>{
             
            
 
-           <div class="container mb-5">
+           <div class="container mb-2">
              
 
-           <div class="row border-1 border-bottom p-2 border-success  mb-4">  
+           <div class="row border-1 border-bottom p-2 border-success mb-2 ">  
            <div>
-           <h4 class="text-center mb-2"> ${question.question}</h4>   
+           <h4 class="text-center mb-3"> ${question.question}</h4>   
           </div>
             <div class="col-6 p-1">
            <div class="float-end" id="imageADiv">
