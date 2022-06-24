@@ -1,4 +1,4 @@
- 
+from django.contrib.auth.decorators import login_required
 from itertools import count
 from django.shortcuts import render
 from question.models import Question
@@ -40,7 +40,7 @@ def questions_view(request,dyna_visible_questions):
    
     return JsonResponse({"data":data[lower:upper],"size":Question.objects.all().count()})
 
-
+@login_required(login_url='/accounts/login/')
 def vote_view(request):
     print("mini-max")
     
