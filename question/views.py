@@ -1,9 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from itertools import count
-from django.shortcuts import render
+from django.shortcuts import redirect, render,HttpResponseRedirect
 from question.models import Question
 from django.http import JsonResponse
+from django.conf import settings
 
+
+ 
 def home(request):
     context={
         "great":"i would be great one day"
@@ -11,7 +14,7 @@ def home(request):
     return render(request,"home.html",context)
 
 
-
+ 
 def questions_view(request,dyna_visible_questions):
      
     visible = 5
@@ -40,17 +43,25 @@ def questions_view(request,dyna_visible_questions):
    
     return JsonResponse({"data":data[lower:upper],"size":Question.objects.all().count()})
 
-@login_required(login_url='/accounts/login/')
+
+
+# @login_required(login_url="http://127.0.0.1:8000/accounts/login/?next=/vote/")
 def vote_view(request):
     print("mini-max")
+    if not request.user.is_authenticated:
+            print("cat")
+            return  JsonResponse({"NotLoggedIn":True})
+   
     
     if request.is_ajax():
+        print("bite")
+
         btnId = request.POST.get('btnId')
         ques_obj = Question.objects.get(id=btnId)
         btnType = request.POST.get('btnType')
         
         if btnType =="A":
-
+            
             if request.user  in ques_obj.countA.all():
                 voteA = False
                 ques_obj.countA.remove(request.user)

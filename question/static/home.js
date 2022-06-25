@@ -51,8 +51,12 @@ const vote = () => {
           btnType:btnType
         },
         success: function (response) {
-          console.log(response);
+          console.log("kalavuna",response);
           
+          if(response.NotLoggedIn==true){
+            window.location.href="/accounts/login/"
+          }
+          else{
           if(btnType=="A"){
           clickedBtn.innerHTML = `
                 ${
@@ -108,7 +112,7 @@ const vote = () => {
                       })
                       console.log("other-count",otherCount.value)
                     }
-          
+                  }
         },
         error: function (error) {
           console.log(error);
