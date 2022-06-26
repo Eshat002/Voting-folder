@@ -9,9 +9,12 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from pickle import TRUE
 import dj_database_url
 from pathlib import Path
 from decouple import config
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -205,3 +208,10 @@ AWS_STORAGE_BUCKET_NAME=config("AWS_STORAGE_BUCKET_NAME")
 AWS_QUERYSTRING_AUTH=config("AWS_QUERYSTRING_AUTH",cast=bool)
 
 LOGIN_URL = '/accounts/login/'
+
+
+
+if os.getcwd() == "/app":
+    SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO','https')
+    SECURE_SSL_REQUIRED=True
+    DEBUG=False
