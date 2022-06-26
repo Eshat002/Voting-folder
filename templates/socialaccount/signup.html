@@ -1,14 +1,25 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
+<div class='container'>
+ 
+  <div class='row'>
+  <div class='col d-none d-md-block'> 
+     hi
+   </div>
+
+   <div id="social-signup-box"class='col-md-5 mt-5 mb-1 text-center'>
+    <div class="card" style="background-color:rgb(237, 253, 253)"> 
+  <div class='card-body  p-5'>
     <h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
-{{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
+<!-- <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
+{{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p> -->
 
 <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
   {% csrf_token %}
@@ -18,5 +29,12 @@
   {% endif %}
   <button type="submit">{% trans "Sign Up" %} &raquo;</button>
 </form>
-
+</div>
+</div>
+       </div>
+       <div class='col d-none d-md-block '>there</div>
+  </div>
+  
+   
+</div>
 {% endblock %}
