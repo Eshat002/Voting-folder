@@ -209,7 +209,8 @@ AWS_QUERYSTRING_AUTH=config("AWS_QUERYSTRING_AUTH",cast=bool)
 
 LOGIN_URL = '/accounts/login/'
 
-SECURE_SSL_REQUIRED=True
+SECURE_SSL_REDIRECT = True
+
 
 # if os.getcwd() == "/app":
 #     SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO','https')
