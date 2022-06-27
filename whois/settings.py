@@ -209,7 +209,7 @@ AWS_QUERYSTRING_AUTH=config("AWS_QUERYSTRING_AUTH",cast=bool)
 
 LOGIN_URL = '/accounts/login/'
 
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 
 
 
