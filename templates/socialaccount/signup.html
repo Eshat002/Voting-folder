@@ -27,7 +27,7 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="btn btn-primary px-3 pb-2 border none rounded-pill mt-3" type="submit">{% trans "Sign Up" %} </button>
+  <button class="btn btn-primary px-3 pb-2 border none rounded-pill mt-1" type="submit">{% trans "Sign Up" %} </button>
 </form>
 </div>
 </div>
@@ -55,7 +55,7 @@
 
   var error_username = document.getElementById("error_1_id_username");
   error_username.classList.add("mb-0");
-   
+
   var baseElement = document.querySelector(".swift");
  
   var nice =baseElement.querySelector("li")
