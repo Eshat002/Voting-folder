@@ -78,7 +78,7 @@ a:hover{
  
 
 
-#id_login,#id_password,#id_email{
+#id_login,#id_password{
     margin-bottom:10px !important;
     height:40px ;
     border-radius:10px;
@@ -87,7 +87,14 @@ a:hover{
    
 }
 
-
+ .jack{
+    margin-bottom:10px !important;
+    height:40px ;
+    border-radius:10px;
+    border:2px solid #67B26F;
+    padding:7px !important;
+   
+}
 /* #id_email,#id_login,#id_password:focus{
     outline:none !important;
 
