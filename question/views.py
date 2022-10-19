@@ -14,7 +14,8 @@ def home(request):
     return render(request,"home.html",context)
 
 
- 
+
+@login_required
 def questions_view(request,dyna_visible_questions):
      
     visible = 5
