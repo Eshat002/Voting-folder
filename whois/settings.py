@@ -86,13 +86,27 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 #sending SES email
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND  = 'django_ses.SESBackend'
-EMAIL_HOST  = 'email-smtp.us-east-1.amazonaws.com'
+# EMAIL_BACKEND  = 'django_ses.SESBackend'
+# EMAIL_HOST  = 'email-smtp.us-east-1.amazonaws.com'
+# EMAIL_PORT = config('EMAIL_PORT',cast=int)
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+# EMAIL_USE_TLS = config('EMAIL_USE_TLS',cast=bool)
+# DEFAULT_FROM_EMAIL=config('DEFAULT_FROM_EMAIL')
+
+
+
+
+# EMAIL_BACKEND  = 'django_ses.SESBackend'
+EMAIL_HOST  = 'in-v3.mailjet.com'
 EMAIL_PORT = config('EMAIL_PORT',cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS',cast=bool)
 DEFAULT_FROM_EMAIL=config('DEFAULT_FROM_EMAIL')
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

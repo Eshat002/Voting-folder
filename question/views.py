@@ -15,7 +15,7 @@ def home(request):
 
 
 
-@login_required
+
 def questions_view(request,dyna_visible_questions):
      
     visible = 5
