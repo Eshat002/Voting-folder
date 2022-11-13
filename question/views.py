@@ -46,7 +46,7 @@ def questions_view(request,dyna_visible_questions):
 
 
 
-@login_required(login_url="/accounts/login/")
+@login_required
 def vote_view(request):
     print("mini-max")
     if not request.user.is_authenticated:
