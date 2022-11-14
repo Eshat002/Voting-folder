@@ -124,7 +124,7 @@ const vote = () => {
 
 
 
-let dyna_visible_questions=5
+let dyna_visible_questions=8
 
 const getQuestions=()=>{
 
@@ -230,7 +230,7 @@ $("#load-more-questions")
   e.stopImmediatePropagation();
   spinner_box_questions.classList.remove("not-visible");
 
-  dyna_visible_questions += 5;
+  dyna_visible_questions += 8;
    
   getQuestions()
 });

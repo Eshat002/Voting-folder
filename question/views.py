@@ -18,7 +18,7 @@ def home(request):
 
 def questions_view(request,dyna_visible_questions):
      
-    visible = 5
+    visible = 8
     upper = dyna_visible_questions
     lower = upper-visible
     questions=Question.objects.all()
