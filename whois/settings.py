@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',cast=bool)
 
-ALLOWED_HOSTS = ["127.0.0.1","voting-app-1","mangofever.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1","voting-app-2.onrender.com","mangofever.herokuapp.com"]
 
 
 # Application definition
