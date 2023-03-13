@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',cast=bool)
 
-ALLOWED_HOSTS = ["127.0.0.1","www.comparestupids.com","mangofever.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1","voting-app-1","mangofever.herokuapp.com"]
 
 
 # Application definition
@@ -157,7 +157,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgres://shxwarcojinjch:48f0c4ebf0382b10e1bf62a1342b0b8c900c3c0cbaa2110fd70e339ef3d6b9de@ec2-54-164-40-66.compute-1.amazonaws.com:5432/dd1cbe9d6hqrqu")
+# DATABASES['default'] = dj_database_url.parse("postgres://shxwarcojinjch:48f0c4ebf0382b10e1bf62a1342b0b8c900c3c0cbaa2110fd70e339ef3d6b9de@ec2-54-164-40-66.compute-1.amazonaws.com:5432/dd1cbe9d6hqrqu")
  
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -225,9 +225,15 @@ AWS_QUERYSTRING_AUTH=config("AWS_QUERYSTRING_AUTH",cast=bool)
 
 LOGIN_URL = '/accounts/login/'
 
-SECURE_SSL_REDIRECT = True
+if DEBUG:
+    SECURE_SSL_REDIRECT=False
+
+else:
+    SECURE_SSL_REDIRECT=True
 
 
+ 
+ 
 
 
 
